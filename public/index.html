@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TODO</title>
+  <meta name="description" content="A web GUI for docker image building">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <style>
+    body {
+        padding: 2em;
+        width: 400px;
+        margin: 0 auto;
+    }
+  </style>
+
+  <!-- This is only needed for development, but for simplicity I will leave it here for produciton as well -->
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "./vendor/preact-compat.js",
+        "react-dom": "./vendor/preact-compat.js",
+        "preact": "./vendor/preact.js",
+        "preact/hooks": "./vendor/preact-hooks.js",
+        "react/jsx-runtime": "./vendor/preact-jsx-runtime.js"
+      }
+    }
+  </script>
+
+  <script type="module" defer>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+
+    if (params.dev !== null) {
+      // Development
+      import('./index.js');
+    } else {
+      // Production
+      import('./index.bundle.js');
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

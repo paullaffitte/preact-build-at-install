@@ -1,0 +1,26 @@
+{
+  "name": "preact-build-at-install",
+  "version": "1.0.0",
+  "description": "An example of how to use modern javascript features and tooling to skip building and bundling during development",
+  "author": "Paul Laffitte",
+  "license": "MIT",
+  "scripts": {
+    "setup": "node setup.js",
+    "build": "node build.js",
+    "serve": "npx serve public"
+  },
+  "dependencies": {
+    "serve": "^13.0.2"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.1",
+    "esbuild": "^0.14.39",
+    "esbuild-plugin-alias": "^0.2.1",
+    "htm": "^3.1.1",
+    "preact": "^10.7.2",
+    "preact-custom-element": "^4.2.1",
+    "preact-jsx-runtime": "^1.2.0"
+  }
+}

@@ -1,3 +1,6 @@
+public/vendor
+public/index.bundle.js
+
 # Logs
 logs
 *.log
